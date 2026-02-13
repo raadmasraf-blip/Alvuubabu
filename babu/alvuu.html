@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Special Question ❤️</title>
+<style>
+body {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+background-color: #ffeef2;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+text-align: center;
+overflow: hidden;
+}
+
+#container {
+background: white;
+padding: 3rem;
+border-radius: 20px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+position: relative;
+}
+
+h1 { color: #d63384; margin-bottom: 1rem; }
+p { font-size: 1.2rem; color: #555; }
+
+.buttons {
+margin-top: 2rem;
+display: flex;
+gap: 20px;
+justify-content: center;
+}
+
+button {
+padding: 15px 30px;
+font-size: 1.1rem;
+border: none;
+border-radius: 50px;
+cursor: pointer;
+transition: transform 0.2s;
+}
+
+#yesBtn { background-color: #ff4d6d; color: white; font-weight: bold; }
+#yesBtn:hover { transform: scale(1.1); background-color: #ff758f; }
+
+#noBtn {
+background-color: #adb5bd;
+color: white;
+position: relative;
+}
+
+.celebration { display: none; }
+.celebration h1 { font-size: 3rem; }
+</style>
+</head>
+<body>
+
+<div id="container">
+<div id="mainContent">
+<img src="your-photo.jpg" alt="Us" style="max-width: 200px; border-radius: 15px; margin-bottom: 15px;">
+<p>I have a very important question to ask you...</p>
+<p><strong>Will you be my Valentine?</strong></p>
+
+<div class="buttons">
+<button id="yesBtn" onclick="celebrate()">YES!</button>
+<button id="noBtn" onmouseover="moveButton()">No</button>
+</div>
+</div>
+
+<div id="celebration" class="celebration">
+<h1>Yay! 💖🥳</h1>
+<p>I can’t wait to see you.Iam missing you a lot. I want to kiss you hug you bacha. Babu You are my life and my always and forever crush. My Noori I can’t wait to have you in my arms. Chumu dibo.</p>
+<p>You're the "best bug" in my code! I love you!</p>
+<div style="font-size: 50px;">🌹🍫✨</div>
+</div>
+</div>
+
+<script>
+function moveButton() {
+const btn = document.getElementById('noBtn');
+// Move the button to a random position within the screen
+const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+
+btn.style.position = 'fixed';
+btn.style.left = x + 'px';
+btn.style.top = y + 'px';
+}
+
+function celebrate() {
+document.getElementById('mainContent').style.display = 'none';
+document.getElementById('celebration').style.display = 'block';
+document.body.style.backgroundColor = '#ff4d6d';
+document.body.style.color = 'white';
+
+// Launch some basic emoji confetti in the console or alert
+confettiEffect();
+}
+
+function confettiEffect() {
+// You could add a confetti library here, but let's keep it simple!
+console.log("CONFETTI TIME!");
+}
+</script>
+</body>
+</html>
